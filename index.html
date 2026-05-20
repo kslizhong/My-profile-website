@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>李钟 / 个人主页</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600&display=swap');
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --text-primary: #f0f0f0;
+      --text-secondary: #a0a0a0;
+      --accent: #e8c97a;
+      --accent2: #c4a35a;
+      --border: rgba(255,255,255,0.08);
+    }
+
+    body {
+      font-family: 'Noto Serif SC', 'Georgia', serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 24px;
+      color: var(--text-primary);
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        #0f0f1a 0%,
+        #1a1a2e 20%,
+        #16213e 40%,
+        #0f3460 60%,
+        #1a1a2e 80%,
+        #0f0f1a 100%
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 12s ease infinite;
+      z-index: 0;
+    }
+
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      padding: 56px 48px;
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      margin: 0 auto 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 600;
+      color: #1a1a2e;
+      letter-spacing: -1px;
+      box-shadow: 0 0 32px rgba(232, 201, 122, 0.3);
+    }
+
+    .name {
+      font-size: 28px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+    }
+
+    .role {
+      font-size: 14px;
+      color: var(--accent);
+      font-weight: 400;
+      letter-spacing: 3px;
+      margin-bottom: 32px;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      margin: 0 auto 32px;
+    }
+
+    .bio {
+      font-size: 15px;
+      color: var(--text-primary);
+      margin-bottom: 12px;
+      line-height: 1.9;
+    }
+
+    .desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 44px;
+    }
+
+    .social {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 22px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 13px;
+      transition: all 0.25s;
+    }
+
+    .social a:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(232, 201, 122, 0.06);
+      transform: translateY(-2px);
+    }
+
+    .social svg {
+      width: 15px;
+      height: 15px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 40px 24px; }
+      .name { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <div class="avatar">李</div>
+  <h1 class="name">李钟</h1>
+  <p class="role">财务审计咨询师</p>
+  <div class="divider"></div>
+  <p class="bio">用数字讲述故事，用专业守护信任。</p>
+  <p class="desc">
+    深耕财务审计与咨询领域多年，为企业提供合规审查、内部控制及财务尽调等专业服务。
+    擅长将复杂的财务逻辑转化为清晰的解决方案，追求精准与严谨。
+    工作之余关注会计准则动态与行业洞察，持续精进专业能力。
+  </p>
+  <div class="social">
+    <a href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      GitHub
+    </a>
+    <a href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.273V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      LinkedIn
+    </a>
+    <a href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      X
+    </a>
+    <a href="#">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.923 19.521q-.32.736-.805 1.354a3 3 0 0 1-.43-.308 2.6 2.6 0 0 1-.452-.543 3 3 0 0 1-.235-.658q-.004-.173-.004-.348 0-3.898 2.205-6.762Q6.164 10.18 9.5 10.18q1.476 0 2.767.502a8.1 8.1 0 0 1 2.3 1.385l-1.615 1.607a5 5 0 0 0 1.488-.984 3.5 3.5 0 0 0 .621-1.19 3.2 3.2 0 0 0 .22-1.41q0-1.62-.963-2.602Q13.61 5.5 12 5.5q-1.622 0-2.602.988a3.3 3.3 0 0 0-1.02 2.417 3.5 3.5 0 0 0 .73 2.1 5.7 5.7 0 0 0 1.97 1.57 10 10 0 0 0 2.7.763q.696.096 1.45.096 2.432 0 4.32-1.064T22.5 10.7l-.096.328q-.192.7-.64 1.277-.447.576-1.09.965-.644.39-1.45.593-.807.203-1.75.203-1.32 0-2.4-.366a5.5 5.5 0 0 1-1.885-1.063 5.6 5.6 0 0 1-1.271-1.67 5.8 5.8 0 0 1-.467-2.176 6 6 0 0 1 .467-2.3 5.6 5.6 0 0 1 1.3-1.85 6.4 6.4 0 0 1 1.952-1.248A7.4 7.4 0 0 1 15 4.2a6.7 6.7 0 0 1 2.18 1.336q.837.837 1.275 2.005.44 1.17.44 2.604l-5.412 2.262q-.11-.576-.336-1.513-.228-.938-.7-1.628t-1.28-1.08a5 5 0 0 0-1.892-.612q-.98-.098-2.02-.098-1.68 0-3.013.527a7.4 7.4 0 0 0-2.362 1.472A6.6 6.6 0 0 0 4.4 6.836a6.3 6.3 0 0 0-.83 2.93 6.4 6.4 0 0 0 .828 2.93 6.4 6.4 0 0 0 2.14 2.22A8.7 8.7 0 0 0 8.9 16.2a7 7 0 0 0 1.7.21q.77.004 1.237.004l4.28-2.183.006.132a3 3 0 0 1-.026.325A2 2 0 0 1 15 15a2 2 0 0 1-.492.064 2 2 0 0 1-.493-.064 2.6 2.6 0 0 1-.49-.22 2 2 0 0 1-.373-.36 3 3 0 0 1-.235-.43 3 3 0 0 1-.17-.505 3 3 0 0 1-.052-.57q0-2.048.918-3.412Q12.5 7.6 13.5 7.6q.77 0 1.36.336a3.7 3.7 0 0 1 1.32 1.32l2.512-1.03Q18.28 4.6 15.54 4.6a7.7 7.7 0 0 0-2.773.46A7 7 0 0 0 10.24 6.52a6.6 6.6 0 0 0-1.85 2.42 7.6 7.6 0 0 0-.663 3.08 7.6 7.6 0 0 0 .663 3.08 6.6 6.6 0 0 0 1.85 2.42 7 7 0 0 0 2.534 1.46 8 8 0 0 0 2.772.46q1.3 0 2.37-.355t1.85-1.034 1.188-1.636q.438-.972.438-2.187 0-.92-.264-1.61a3.2 3.2 0 0 0-.72-1.19 2.5 2.5 0 0 0-1.07-.73 3 3 0 0 0-1.28-.25 2.5 2.5 0 0 0-1.82.62q-.64.62-.64 1.8l-.004.1q0 1.58.744 2.524.746.944 2.16.944 1.3 0 1.95-.68t.65-2.04q0-1.82-1.28-2.88Q16.2 10.6 14 10.6H12q-2.76 0-4.3 1.23T6 15.64a5 5 0 0 0 1.13 1.31q.71.566 1.57.943l.37.162Z"/></svg>
+      邮箱
+    </a>
+  </div>
+</div>
+
+</body>
+</html>
