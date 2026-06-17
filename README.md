@@ -1,7 +1,1 @@
-# My Profile Website
-
-Personal profile website.
-
-## Getting Started
-
-Project is in early setup. Documentation will be added as the project grows.
+This is a test project for my Github. I am a new joiner. Hope to contribute more shortly.
