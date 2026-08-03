@@ -21,3 +21,7 @@ desktop.ini
 .env
 .env.local
 node_modules/
+
+# OpenSpec / 本地开发工具配置(不属于博客仓库)
+.opencode/
+openspec/

@@ -1,0 +1,97 @@
+baseURL = "https://my-homepage.pages.dev/"
+defaultContentLanguage = "zh-cn"
+title = "爱思考的好奇者 Zhong Li"
+
+# 主题
+theme = "PaperMod"
+
+# 构建参数
+enableRobotsTXT = true
+enableGitInfo = true
+
+# 网站不渲染在 Google 搜索里,直到你准备好
+# buildFuture = false
+# buildDrafts = false
+
+[pagination]
+  pagerSize = 10
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+
+# 菜单
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "文章"
+  url = "/posts/"
+  weight = 2
+
+[[menu.main]]
+  name = "归档"
+  url = "/archives/"
+  weight = 3
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 4
+
+[[menu.main]]
+  name = "关于"
+  url = "/about/"
+  weight = 5
+
+# ============ PaperMod 参数 ============
+[params]
+  env = "production"
+  description = "爱思考的好奇者的个人博客"
+  author = "Zhong Li"
+  DateFormat = "2006-01-02"
+  defaultTheme = "auto"
+  ShowReadingTime = true
+  ShowShareButtons = false
+  ShowPostNavLinks = true
+  ShowBreadCrumbs = true
+  ShowCodeCopyButtons = true
+  ShowRssButtonInSectionTermList = true
+  disableSpecial1Post = false
+  disableScrollToTop = false
+  comments = false
+  hidemeta = false
+  showtoc = false
+  tocopen = false
+  ShowThemeToggle = true
+  mainSections = ["posts"]
+
+  [params.assets]
+    favicon = "/favicon.ico"
+
+  [params.label]
+    text = "首页"
+    icon = "/favicon.ico"
+    iconHeight = 35
+
+# 中文语言配置
+[languages.zh-cn]
+  locale = "zh-CN"
+  label = "简体中文"
+  weight = 1
+  [languages.zh-cn.params]
+    description = "爱思考的好奇者的个人博客"
+
+# ============ 标记 (Markup) ============
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+    codeFences = true
+    guessSyntax = true
