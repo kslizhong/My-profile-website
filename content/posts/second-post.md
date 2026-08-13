@@ -30,9 +30,9 @@ description: "搭建个人工作台部署一些工具的每周操作记录Week o
 SenseVoice + onnxruntime 分块转写（GPU/DML 稳定版）
 - 将长音频切成 CHUNK_SEC 秒的块，逐块推理（避免超大张量导致 DML 崩溃）
 - 输出带时间戳的分段文本
+
 第二步：batch_audio_to_text.py将批量音频转成文字，转英文时注意用空格作为单词之间的分隔
 批量音频转文字工具（Windows 原生 + AMD GPU / DirectML）
-功能：
 - 支持任意音频格式（m4a/mp3/flac/wav/aac/ogg...），自动用 ffmpeg 转 16kHz mono wav
 - 用 onnxruntime-directml 在 AMD GPU 上跑 SenseVoice 转写
 - 批量处理：传入一个文件夹，或直接拖多个文件进来
