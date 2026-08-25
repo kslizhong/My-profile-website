@@ -1,6 +1,6 @@
 baseURL = "https://kslizhong.com/"
 defaultContentLanguage = "zh-cn"
-title = "爱思考的好奇者 Zhong Li"
+title = "兰花爱好者Zhong Li"
 
 # 主题
 theme = "PaperMod"
@@ -51,7 +51,7 @@ enableGitInfo = true
 # ============ PaperMod 参数 ============
 [params]
   env = "production"
-  description = "爱思考的好奇者的个人博客"
+  description = "兰花爱好者 Zhong Li 的个人博客"
   author = "Zhong Li"
   DateFormat = "2006-01-02"
   defaultTheme = "auto"
@@ -84,7 +84,7 @@ enableGitInfo = true
   label = "简体中文"
   weight = 1
   [languages.zh-cn.params]
-    description = "爱思考的好奇者的个人博客"
+    description = "兰花爱好者 Zhong Li 的个人博客"
 
 # ============ 标记 (Markup) ============
 [markup]
